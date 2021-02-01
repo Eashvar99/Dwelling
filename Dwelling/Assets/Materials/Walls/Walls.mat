@@ -46,7 +46,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _DetailMap:
         m_Texture: {fileID: 2800000, guid: 144e6b9b158b247469c684d288f937bf, type: 3}
-        m_Scale: {x: 5, y: 5}
+        m_Scale: {x: 2, y: 6}
         m_Offset: {x: 0, y: 0}
     - _DistortionVectorMap:
         m_Texture: {fileID: 0}
@@ -189,7 +189,7 @@ Material:
     - _RefractionModel: 0
     - _SSRefractionProjectionModel: 0
     - _Smoothness: 0.5
-    - _SmoothnessRemapMax: 0.35860658
+    - _SmoothnessRemapMax: 0.34084702
     - _SmoothnessRemapMin: 0
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2

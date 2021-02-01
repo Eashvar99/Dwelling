@@ -382,9 +382,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 7a3d0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 78fbffff
+      m_SelectedIDs: ca530000
+      m_LastClickedID: 21450
+      m_ExpandedIDs: 6e82ffffe684ffff6486fffff688ffff768bffff788bffff3e8effffa0e0ffffeef7ffff78fbffffd64c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: c063d6a72320ce840b1874ac6471b878
-  m_Gizmos: 1
+  m_Gizmos: 0
   m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 0
@@ -470,9 +470,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 8.975449, y: 0.39764684, z: 12.138062}
+    m_Target: {x: 4.393203, y: 1.727738, z: 23.869453}
     speed: 2
-    m_Value: {x: 8.975449, y: 0.39764684, z: 12.138062}
+    m_Value: {x: 4.393203, y: 1.727738, z: 23.869453}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -501,13 +501,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.048951097, y: 0.18175398, z: -0.00910409, w: 0.9821194}
+    m_Target: {x: -0.018308718, y: -0.006585097, z: 0.00014410137, w: -0.9998697}
     speed: 2
-    m_Value: {x: 0.048949335, y: 0.18174744, z: -0.009103762, w: 0.98208404}
+    m_Value: {x: -0.019807335, y: -0.0065844855, z: 0.00015397213, w: -0.9997822}
   m_Size:
-    m_Target: 19.597612
+    m_Target: 29.927626
     speed: 2
-    m_Value: 19.597612
+    m_Value: 29.927626
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -572,20 +572,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes/MainGame
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/Scenes/MainGame
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Unity Projects\Dwelling_Repo\Dwelling\Dwelling
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4c390000
-    m_LastClickedID: 14668
-    m_ExpandedIDs: 000000004c3900009842000000ca9a3b
+    m_SelectedIDs: a63a0000
+    m_LastClickedID: 15014
+    m_ExpandedIDs: 000000004c3900008e3d00009842000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -640,22 +640,22 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000c8620000ee530000804400006c370000d8470000000000007e340000ce630000c2620000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000c8620000ee530000804400006c370000d8470000000000007e340000ce630000c2620000e04a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: MainGame
+      m_OriginalName: MainGame
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 15014
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:

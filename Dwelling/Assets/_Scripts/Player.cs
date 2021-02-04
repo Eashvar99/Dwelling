@@ -8,11 +8,12 @@ public class Player : MonoBehaviour
     RaycastHit hitInfo;
     public Transform lampPos;
     bool lampPickup = false;
-    GameObject lamp;
+    [HideInInspector]
+    public GameObject lamp;
     private int layerMask = ~(1 << 9);
 
     bool room2Key = false;
-
+    bool room4Key = false;
     stopWhispers stopWhisp;
 
     // Start is called before the first frame update
@@ -47,12 +48,23 @@ public class Player : MonoBehaviour
                     room2Key = true;
                 }
 
+                //Room 2
+                if(Input.GetButtonDown("Interact") && hitInfo.collider.name == "Room4Key" && room4Key == false)
+                {
+                    Destroy(hitInfo.collider.gameObject);
+                    room4Key = true;
+                }
+
                 //Opening Doors
                 if(Input.GetButtonDown("Interact") && hitInfo.collider.name == "Door1" && lampPickup == true)
                 {
                     Destroy(hitInfo.collider.gameObject);
                 }
                 else if(Input.GetButtonDown("Interact") && hitInfo.collider.name == "Door2" && room2Key == true)
+                {
+                    Destroy(hitInfo.collider.gameObject);
+                }
+                else if(Input.GetButtonDown("Interact") && hitInfo.collider.name == "Door4" && room4Key == true)
                 {
                     Destroy(hitInfo.collider.gameObject);
                 }

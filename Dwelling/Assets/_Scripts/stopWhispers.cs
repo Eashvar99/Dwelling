@@ -6,10 +6,19 @@ public class stopWhispers : MonoBehaviour
 {
     public AudioSource audio1;
     public AudioSource audio2;
+
+    public GameObject Key;
+
+    public Transform keyPos;
     
     static float t = 0.0f;
 
-    bool doLerp = false;
+    [HideInInspector]
+    public bool doLerp = false;
+
+    bool keyMade = false;
+
+    public bool gotKey = false;
 
     private void Update() 
     {
@@ -23,11 +32,15 @@ public class stopWhispers : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("Player") && keyMade == false)
         {
-            //audio1.Stop();
-            //audio2.Stop();
-            doLerp = true;
+            Instantiate(Key,keyPos.position, keyPos.rotation);
+            keyMade = true;
+        }
+
+        if(other.CompareTag("Player") && gotKey == true)
+        {
+            //do jumpscare
         }
     }
 }

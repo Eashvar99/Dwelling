@@ -1545,6 +1545,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1ffd227cb3dc4b9439ee5d89b6942a53, type: 2}
+    - target: {fileID: -6144695515940007800, guid: aa6d4d2671e9d064aaf9fc492dbec662,
+        type: 3}
+      propertyPath: m_TagString
+      value: Head
+      objectReference: {fileID: 0}
     - target: {fileID: 7314993311451344360, guid: aa6d4d2671e9d064aaf9fc492dbec662,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -1564,11 +1569,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -3.0074064e-20
-      objectReference: {fileID: 0}
-    - target: {fileID: -6144695515940007800, guid: aa6d4d2671e9d064aaf9fc492dbec662,
-        type: 3}
-      propertyPath: m_TagString
-      value: Head
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa6d4d2671e9d064aaf9fc492dbec662, type: 3}

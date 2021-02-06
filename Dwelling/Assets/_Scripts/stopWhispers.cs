@@ -20,6 +20,20 @@ public class stopWhispers : MonoBehaviour
 
     public bool gotKey = false;
 
+    public GameObject fallingMan;
+    public Transform fallingPos;
+    bool hitFloor = false;
+
+    GameObject thisMan;
+    GameObject player;
+
+    bool bodyThud = false;
+    bool playOnce = false;
+    public AudioClip thudNoise;
+    private void Start() 
+    {
+        player = GameObject.Find("FirstPerson-AIO");    
+    }
     private void Update() 
     {
         if(t<=1 && doLerp == true)
@@ -27,6 +41,21 @@ public class stopWhispers : MonoBehaviour
             audio1.volume = Mathf.Lerp(audio1.volume, 0, t);
             audio2.volume = Mathf.Lerp(audio2.volume, 0, t);
             t += 0.05f * Time.deltaTime;
+        }
+
+        if(hitFloor == true && thisMan.transform.position.y >= 1.19)
+        {
+            thisMan.transform.position = new Vector3(thisMan.transform.position.x, thisMan.transform.position.y - 1f, thisMan.transform.position.z);
+        }
+        else if(hitFloor == true && thisMan.transform.position.y < 1.19)
+        {
+            bodyThud = true;
+        }
+
+        if(bodyThud == true && playOnce == false)
+        {
+            player.GetComponent<AudioSource>().PlayOneShot(thudNoise);
+            playOnce = true;
         }
     }
 
@@ -38,9 +67,11 @@ public class stopWhispers : MonoBehaviour
             keyMade = true;
         }
 
-        if(other.CompareTag("Player") && gotKey == true)
+        if(other.CompareTag("Player") && gotKey == true && hitFloor == false)
         {
             //do jumpscare
+            thisMan = Instantiate(fallingMan, fallingPos.position, fallingPos.rotation);
+            hitFloor = true;
         }
     }
 }

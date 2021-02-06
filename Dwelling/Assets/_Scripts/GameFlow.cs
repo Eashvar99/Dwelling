@@ -11,6 +11,7 @@ public class GameFlow : MonoBehaviour
     //Scene State
     private bool isLoaded;
     private bool shouldLoad;
+    static public Scene scene;
 
     void Start()
     {
@@ -18,7 +19,7 @@ public class GameFlow : MonoBehaviour
         {
             for(int i = 0; i < SceneManager.sceneCount; ++i)
             {
-                Scene scene = SceneManager.GetSceneAt(i);
+                scene = SceneManager.GetSceneAt(i);
                 if(scene.name == gameObject.name)
                 {
                     isLoaded = true;

@@ -1,9 +1,9 @@
 sceneSetups:
 - path: Assets/_Scenes/MainGame/Gameplay.unity
   isLoaded: 1
-  isActive: 1
-  isSubScene: 0
-- path: Assets/_Scenes/MainGame/Scene_05.unity
-  isLoaded: 1
   isActive: 0
+  isSubScene: 0
+- path: Assets/_Scenes/MainGame/Scene_02.unity
+  isLoaded: 1
+  isActive: 1
   isSubScene: 0

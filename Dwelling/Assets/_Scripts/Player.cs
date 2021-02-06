@@ -15,23 +15,23 @@ public class Player : MonoBehaviour
     bool room2Key = false;
     bool room4Key = false;
     stopWhispers stopWhisp;
+    Projector projector;
 
     // Start is called before the first frame update
     void Start()
     {
         stopWhisp = GameObject.FindObjectOfType<stopWhispers>();
+        projector = GameObject.FindObjectOfType<Projector>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-          if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, 20.0f, layerMask))
+          if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo, 7.0f, layerMask))
         {
             if(hitInfo.collider != null)
-            {
-                
-                Debug.Log(hitInfo.collider.name);
+            { 
+                //Debug.Log(hitInfo.collider.name);
                 //Room 1
                 if(Input.GetButtonDown("Interact") && hitInfo.collider.name == "Lamp" && lampPickup == false)
                 {
@@ -48,7 +48,13 @@ public class Player : MonoBehaviour
                     room2Key = true;
                 }
 
-                //Room 2
+                //Room 3
+                if(Input.GetButtonDown("Interact") && hitInfo.collider.name == "Projector")
+                {
+                    projector.onProjector = true;
+                }
+
+                //Room 4
                 if(Input.GetButtonDown("Interact") && hitInfo.collider.name == "Room4Key" && room4Key == false)
                 {
                     Destroy(hitInfo.collider.gameObject);

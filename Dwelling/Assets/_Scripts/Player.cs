@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
     stopWhispers stopWhisp;
     Projector projector;
 
+    
+    static public int hallwayCounter = 0;
+
     // Start is called before the first frame update
     void Start()
     {

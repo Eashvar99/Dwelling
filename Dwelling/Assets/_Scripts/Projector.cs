@@ -7,12 +7,22 @@ public class Projector : MonoBehaviour
     public GameObject player;
     public GameObject projCam;
 
+    int frame = 0;
+
+    public GameObject room3Key;
+    public Transform room3KeyPos;
+
+    GameObject scriptKey;
+
     [HideInInspector]
     public bool onProjector = false;
     void Start()
     {
         projCam = Instantiate(projCam, this.transform.position, this.transform.rotation);
         projCam.GetComponent<Camera>().enabled = false;
+
+        scriptKey = Instantiate(room3Key, room3KeyPos.position, room3KeyPos.rotation);
+        scriptKey.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,13 +39,26 @@ public class Projector : MonoBehaviour
             player.GetComponentInChildren<Camera>().enabled = false;
             projCam.GetComponent<Camera>().enabled = true;
 
-            if(Input.GetKeyDown(KeyCode.A))
+            if(Input.GetKeyDown(KeyCode.A) && frame > 0)
             {
+                //Debug.Log(frame);
                 //play move animation in reverse
+                frame--;
             }
-            else if(Input.GetKeyDown(KeyCode.D))
+            else if(Input.GetKeyDown(KeyCode.D) && frame < 30)
             {
+                //Debug.Log(frame);
                 //play movie animation forward
+                frame++;
+            }
+
+            if(frame <= 15 && frame >= 10)
+            {
+                scriptKey.SetActive(true);
+            }
+            else
+            {
+                scriptKey.SetActive(false);
             }
         }
         

@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private int layerMask = ~(1 << 9);
 
     bool room2Key = false;
+    bool room3Key = false;
     bool room4Key = false;
     stopWhispers stopWhisp;
     Projector projector;
@@ -34,7 +35,7 @@ public class Player : MonoBehaviour
         {
             if(hitInfo.collider != null)
             { 
-                //Debug.Log(hitInfo.collider.name);
+                Debug.Log(hitInfo.collider.name);
                 //Room 1
                 if(Input.GetButtonDown("Interact") && hitInfo.collider.name == "Lamp" && lampPickup == false)
                 {
@@ -58,10 +59,19 @@ public class Player : MonoBehaviour
                 }
 
                 //Room 4
+                if(Input.GetButtonDown("Interact") && hitInfo.collider.name == "Room3Key(Clone)" && room3Key == false)
+                {
+                    Destroy(hitInfo.collider.gameObject);
+                    room3Key = true;
+                }
+
+                //Room 4
                 if(Input.GetButtonDown("Interact") && hitInfo.collider.name == "Room4Key" && room4Key == false)
                 {
                     Destroy(hitInfo.collider.gameObject);
                     room4Key = true;
+                    lamp.transform.GetChild(0).GetComponent<Light>().enabled = true;
+                    lamp.transform.GetChild(1).GetComponent<Light>().enabled = true;
                 }
 
                 //Opening Doors
@@ -70,6 +80,10 @@ public class Player : MonoBehaviour
                     Destroy(hitInfo.collider.gameObject);
                 }
                 else if(Input.GetButtonDown("Interact") && hitInfo.collider.name == "Door2" && room2Key == true)
+                {
+                    Destroy(hitInfo.collider.gameObject);
+                }
+                else if(Input.GetButtonDown("Interact") && hitInfo.collider.name == "Door3" && room3Key == true)
                 {
                     Destroy(hitInfo.collider.gameObject);
                 }

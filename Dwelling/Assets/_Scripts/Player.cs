@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
         {
             if(hitInfo.collider != null)
             { 
-                Debug.Log(hitInfo.collider.name);
+                //Debug.Log(hitInfo.collider.name);
                 //Room 1
                 if(Input.GetButtonDown("Interact") && hitInfo.collider.name == "Lamp" && lampPickup == false)
                 {
@@ -53,7 +53,13 @@ public class Player : MonoBehaviour
                 }
 
                 //Room 3
-                if(Input.GetButtonDown("Interact") && hitInfo.collider.name == "Projector")
+                if(Input.GetButtonDown("Interact") && hitInfo.collider.name == "Projector" && projector.alreadyDid == false)
+                {
+                    projector.onProjector = true;
+                    projector.alreadyDid = true;
+                    projector.music.Play();
+                }
+                else if (Input.GetButtonDown("Interact") && hitInfo.collider.name == "Projector" && projector.alreadyDid == true)
                 {
                     projector.onProjector = true;
                 }

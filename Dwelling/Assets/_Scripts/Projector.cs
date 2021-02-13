@@ -14,6 +14,14 @@ public class Projector : MonoBehaviour
 
     GameObject scriptKey;
 
+    public AudioSource music;
+    public AudioClip violin;
+    public AudioClip violinReverse;
+
+    [HideInInspector]
+    public bool alreadyDid = false;
+    bool startReverse = false;
+
     [HideInInspector]
     public bool onProjector = false;
     void Start()
@@ -28,37 +36,48 @@ public class Projector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("LeaveCam") && onProjector == true)
+        
+        if(startReverse == true)
         {
-            player.GetComponentInChildren<Camera>().enabled = true;
-            projCam.GetComponent<Camera>().enabled = false;
-            onProjector = false;
+            if(Input.GetButtonDown("LeaveCam") && onProjector == true)
+            {
+                player.GetComponentInChildren<Camera>().enabled = true;
+                projCam.GetComponent<Camera>().enabled = false;
+                onProjector = false;
+            }
+            else if(onProjector == true)
+            {
+                player.GetComponentInChildren<Camera>().enabled = false;
+                projCam.GetComponent<Camera>().enabled = true;
+
+                if(Input.GetKeyDown(KeyCode.A) && frame > 0)
+                {
+                    //Debug.Log(frame);
+                    //play move animation in reverse
+                    frame--;
+                }
+                else if(Input.GetKeyDown(KeyCode.D) && frame < 30)
+                {
+                    //Debug.Log(frame);
+                    //play movie animation forward
+                    frame++;
+                }
+                if(frame <= 15 && frame >= 10)
+                {
+                    scriptKey.SetActive(true);
+                }
+                else
+                {
+                    scriptKey.SetActive(false);
+                }
+            }
         }
-        else if(onProjector == true)
+        else if(alreadyDid == true && frame < 30)
         {
-            player.GetComponentInChildren<Camera>().enabled = false;
-            projCam.GetComponent<Camera>().enabled = true;
-
-            if(Input.GetKeyDown(KeyCode.A) && frame > 0)
+            frame ++;
+            if(frame == 30)
             {
-                //Debug.Log(frame);
-                //play move animation in reverse
-                frame--;
-            }
-            else if(Input.GetKeyDown(KeyCode.D) && frame < 30)
-            {
-                //Debug.Log(frame);
-                //play movie animation forward
-                frame++;
-            }
-
-            if(frame <= 15 && frame >= 10)
-            {
-                scriptKey.SetActive(true);
-            }
-            else
-            {
-                scriptKey.SetActive(false);
+                startReverse = true;
             }
         }
         

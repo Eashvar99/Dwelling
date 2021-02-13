@@ -11,6 +11,10 @@ public class LampOff : MonoBehaviour
     public GameObject kidTrigger;
 
     public GameObject RoomKey4;
+
+    public AudioSource audio1;
+    public AudioSource audio2;
+
     Player player;
     bool entered1 = false;
     bool entered2 = false;
@@ -27,6 +31,7 @@ public class LampOff : MonoBehaviour
             player.lamp.transform.GetChild(0).GetComponent<Light>().enabled = false;
             player.lamp.transform.GetChild(1).GetComponent<Light>().enabled = false;
             
+            audio1.Play();
             spotlight.SetActive(true);
             kidTrigger.SetActive(true);
 
@@ -48,6 +53,7 @@ public class LampOff : MonoBehaviour
         yield return new WaitForSeconds(1f);
         gunArm.SetActive(true);
         RoomKey4.SetActive(true);
+        audio2.Play();
         demonSpotlight.SetActive(true);
         yield return new WaitForSeconds(2f);
         gunArm.SetActive(false);
